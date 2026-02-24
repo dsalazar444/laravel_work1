@@ -21,14 +21,6 @@ class Product extends Model
     * $this->comments - Comment[] - contains the associated comments
     */
 
-    use HasFactory;
-/**
-* PRODUCT ATTRIBUTES
-* $this->attributes['id'] - int - contains the product primary key (id)
-* $this->attributes['name'] - string - contains the product name
-* $this->attributes['price'] - int - contains the product price
-* $this->comments - Comment[] - contains the associated comments
-*/
     public function comments(): HasMany { return $this->hasMany(Comment::class); } //A product can have many comments -> use product_id in Comments to connect
 
     public function getComments(): Collection { return $this->comments; }
