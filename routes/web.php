@@ -21,7 +21,7 @@ Route::get('/about', function () {
 # Este código deberia ir en un controller de ABout, pues son como los views.py en django, entonces las funciones deben ir ahi
 
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name("product.index");
-#hay que ponerlo aqui porque si no espera un int luego de products/, y como le llega un str, se daña
+# Hay que ponerlo aqui porque si no espera un int luego de products/, y como le llega un str, se daña
 Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name("product.create");
 Route::post('/products/save', 'App\Http\Controllers\ProductController@save')->name("product.save"); 
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name("product.show");
